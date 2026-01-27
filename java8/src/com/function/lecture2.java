@@ -4,7 +4,7 @@ package com.function;
 //Single abstract method
 
 //functional interface------runnable, clonable, callable
-//interface I{
+//interface I1{
 	/*void m1(); //------public abstract
 	default void m3() {
 		System.out.println("m3 method inside the A");
@@ -40,46 +40,73 @@ obj.m1();
 }
 }*/
 //-----------------------------with lambda expression
-  /*interface I{
+  /*interface I2{
 	void m11();
 	
 }
-public class neha1 implements I{
+public class neha1 implements I2{
 	public void m11() {
 		System.out.println("m1 method inside the class neha");
 	}
 	public static void main(String []args) {
-		I obj1=new neha1();
+		I2 obj1=new neha1();
 		obj1.m11();
 	}
 }*/
 //-------------------------------Example without lambda expression
 
-/*interface I{
+/*interface I3{
 	void m1(int a,int b);
 	
 }
-public class rohan implements I{
+public class rohan implements I3{
 	public void m1(int a, int b) {
 		System.out.println(a+b);
 	}
 	public static void main(String[] args) {
-		I obj =new rohan();
+		I3 obj =new rohan();
 		obj.m1(10,20);
 		
 	}
 }*/
 //----------------------------Example add two number with lambda expression
-interface I{
+/*interface I4{
 	public abstract void m1(int a,int b);
 }
 public class lecture2{
 	public static void main(String[] args) {
-	I obj=	( a, b)->System.out.println(a+b);
+	I4 obj=	( a, b)->System.out.println(a+b);
     obj.m1(10,20);
 	
 	
 	}
+}*/
+//--------------------------Example find length without lambda expression
+
+/*interface I5{
+	public abstract int getTheLength(String s);
 }
+public class lecture3 implements I5{
+	public int getTheLength(String s) {
+		return s.length();
+	}
+	public static void main(String[] args) {
+		
 	
+		I5 obj=new lecture3();
+		System.out.println(obj.getTheLength("neha"));
+	}
+}*/
+
+//-----------------rind length without lambda expression
+
+	interface I{
+		public abstract int getTheLength(String s);
+	}
+public class lecture2{
+	public static void main(String[] args) {
+		I obj=( s)->s.length();
+		System.out.println(obj.getTheLength("neha"));
+	}
+}
 
