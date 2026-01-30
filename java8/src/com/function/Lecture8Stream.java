@@ -41,19 +41,17 @@
  * Please be informed that the method is part of Stream APIs.
  * It allows to perform the transformation of elements in the Stream.
  * It is going to take function as the argument.
+ * It is always called as one To one Mapping ,the map method takes any number of input objects.
+ * but the resultant object is also the same as the input objects. 
  * 
  */
-
-
-
-
-
-
 
 package com.function;
 
 import java.util.ArrayList;
+import java.util.function.Function;
 import java.util.function.Predicate;
+import java.util.function.Supplier;
 import java.util.stream.Stream;
 
 public class Lecture8Stream {
@@ -79,6 +77,12 @@ public class Lecture8Stream {
 		numbers.stream().filter(p).forEach(j->System.out.println(j));*/
 		
 		numbers.stream().filter(i->i%2==0).forEach(j->System.out.println(j));
+		
+		Function<Integer,Integer>f=i->i*i;
+		numbers.stream().filter(i->i%2==0).map(f).forEach(i->System.out.println(i));
+		
+		Supplier<String> s1=()->"Hello world";
+		System.out.println(s1.get());
 		
 	}
 

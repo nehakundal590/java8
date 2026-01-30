@@ -48,6 +48,7 @@ import java.util.function.BiFunction;
 import java.util.function.BiPredicate;
 import java.util.function.Consumer;
 import java.util.function.Function;
+import java.util.function.Supplier;
 
 /*Predicate--------boolean test
  * Bi-Prediacte-----boolean test(T t)
@@ -86,7 +87,10 @@ public class lecture7 {
 	        
 	        BiFunction<String,String,Integer> bm=(s1,s2)->s1.length()+s2.length();
 	        System.out.println(bm.apply("neha", "devi"));
+	        
+	        Supplier<String> s1=()->"Hello world";
+			System.out.println(s1.get());
 		}
 }
-
+//Q-----
 
